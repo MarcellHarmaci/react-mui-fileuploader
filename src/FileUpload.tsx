@@ -328,10 +328,12 @@ function FileUpload(props: FileUploadProps) {
 
       setAnimate(false)
 
-      setAction({
-        event,
-        files: event.dataTransfer?.files,
-      })
+      if (!disabled) {
+        setAction({
+          event,
+          files: event.dataTransfer?.files,
+        })
+      }
     }, [])
 
   /**
